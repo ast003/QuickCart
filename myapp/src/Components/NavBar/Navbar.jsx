@@ -1,4 +1,3 @@
-import './Navbar.css';
 import logo from '../Assets/logo.png';
 import cart_icon from '../Assets/cart_icon.png';
 import React, { useState } from 'react';
@@ -50,7 +49,7 @@ const Navbar = () => {
           <Link to='/login' className='bg-blue-500 text-white px-4 py-2 rounded w-full text-center'>Login</Link>
         </li>
       </ul>
-      <div className='login-cart hidden md:flex items-center space-x-4'>
+      <div className='login-cart hidden md:flex items-center space-x-10'>
         <Link to='/login'>
           <button className='bg-blue-500 text-white px-4 py-2 rounded'>Login</button>
         </Link>
