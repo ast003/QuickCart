@@ -1,16 +1,3 @@
-// import React from 'react'
-// import hero_image from '../Assets/hero_image.png'
-// const Hero = () => {
-//   return (
-
-//       <div className='bg-gradient-to-b from fuchsia-400 to white'>
-//       <img className='absolute right-0 ' src={hero_image}/>
-//       </div>
-
-//   )
-// }
-
-// export default Hero;
 import React from 'react';
 import hero_image from '../Assets/hero_image.png';
 
