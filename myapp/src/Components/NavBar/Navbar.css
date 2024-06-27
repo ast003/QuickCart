@@ -1,8 +1,6 @@
-.navbar{
+/* .navbar{
     display:flex;
     justify-content: space-around;
-    padding:16px;
-    box-shadow:0px 1px 3px -2px rgb(29, 26, 26);;
 }
 .nav-logo{
     display: flex;
@@ -59,6 +57,7 @@
   .nav-menu{
     display: flex;
     align-items: center;
+    list-style: none;
     color:gray;
     gap:50px;
     font-size: 20px;
@@ -66,10 +65,10 @@
   }
   .nav-menu li{
     display:flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    gap:6px;
+    align-items: center;
+    justify-content: center;  
+    gap:3px;
     cursor:pointer;
   }
   .nav-menu hr{
@@ -78,4 +77,4 @@
     height: 3px;
     border-radius: 10px;
     background-color: red;
-  }
+  } */
