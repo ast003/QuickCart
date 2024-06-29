@@ -5,7 +5,6 @@ import arrow from '../Assets/arrow.png';
 const Hero = () => {
   return (
     <div className='block w-full h-screen relative overflow-hidden'>
-
       <div className='bg-gradient-to-b from-pink-200 to-white h-full'>
         <div className='relative flex flex-col left-40 top-40'>
           <h2 className='text-2xl font-semibold mb-7'>New Arrivals Only</h2>
