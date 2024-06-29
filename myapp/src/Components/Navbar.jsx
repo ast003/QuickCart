@@ -1,5 +1,5 @@
-import logo from '../Assets/logo.png';
-import cart_icon from '../Assets/cart_icon.png';
+import logo from './Assets/logo.png';
+import cart_icon from './Assets/cart_icon.png';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
