@@ -6,11 +6,11 @@ import whatsapp_icon from './Assets/whatsapp_icon.png'
 
 const Footer = () => {
     return (
-        <div className='mt-40 py-8'>
+        <div className='mt-24 py-8'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex items-center justify-center mb-12'>
             <img src={footer_logo} alt='Footer Logo' className='h-12 mr-2' />
-            <p className='text-3xl font-semibold'>QUICKCART</p>
+            <p className='text-3xl font-semibold'>QuickCart</p>
           </div>
       
 

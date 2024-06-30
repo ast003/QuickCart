@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className='navbar bg-white shadow-lg p-4 flex items-center justify-between'>
       <div className='nav-logo flex items-center'>
         <img src={logo} alt="Logo" className='h-8 w-8' />
-        <p className='ml-2 text-lg font-bold'>QuickCart</p>
+        <p className='ml-2 text-3xl font-semibold'>QuickCart</p>
       </div>
       <div className='md:hidden flex items-center'>
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='text-gray-700 focus:outline-none'>
@@ -31,19 +31,19 @@ const Navbar = () => {
       <ul className={` ${isMenuOpen ? 'flex' : 'hidden'} flex-col md:flex-row md:flex md:space-x-8 md:items-center absolute md:static top-14 left-0 right-0 bg-white md:bg-transparent shadow-md md:shadow-none p-4 md:p-0`}>
         <li onClick={() => { setMenu("shop"); setIsMenuOpen(false); }} className="relative mt-2 md:mt-0">
           <Link to='/'>Shop</Link>
-          {menu === "shop" && <hr className="absolute bottom-0 left-0 w-full border-b-2 border-blue-500" />}
+          {menu === "shop" && <hr className="absolute bottom-0 left-0 w-full border-b-2 border-red-500" />}
         </li>
         <li onClick={() => { setMenu("men"); setIsMenuOpen(false); }} className="relative mt-2 md:mt-0">
           <Link to='/men'>Men</Link>
-          {menu === "men" && <hr className="absolute bottom-0 left-0 w-full border-b-2 border-blue-500" />}
+          {menu === "men" && <hr className="absolute bottom-0 left-0 w-full border-b-2 border-red-500" />}
         </li>
         <li onClick={() => { setMenu("women"); setIsMenuOpen(false); }} className="relative mt-2 md:mt-0">
           <Link to='/women'>Women</Link>
-          {menu === "women" && <hr className="absolute bottom-0 left-0 w-full border-b-2 border-blue-500" />}
+          {menu === "women" && <hr className="absolute bottom-0 left-0 w-full border-b-2 border-red-500" />}
         </li>
         <li onClick={() => { setMenu("kids"); setIsMenuOpen(false); }} className="relative mt-2 md:mt-0">
           <Link to='/kids'>Kids</Link>
-          {menu === "kids" && <hr className="absolute bottom-0 left-0 w-full border-b-2 border-blue-500" />}
+          {menu === "kids" && <hr className="absolute bottom-0 left-0 w-full border-b-2 border-red-500" />}
         </li>
         <li className='login-cart flex md:hidden mt-4'>
           <Link to='/login' className='bg-blue-500 text-white px-4 py-2 rounded w-full text-center'>Login</Link>
@@ -51,7 +51,7 @@ const Navbar = () => {
       </ul>
       <div className='login-cart hidden md:flex items-center space-x-10'>
         <Link to='/login'>
-        <button type="button" className="text-gray-950 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-950 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Subscribe</button>
+        <button type="button" className="text-gray-950 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-950 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Login</button>
         </Link>
         <Link to='/cart' className='relative'>
           <img src={cart_icon} alt="Cart" className='h-6 w-6' />
