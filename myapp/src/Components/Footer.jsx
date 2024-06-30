@@ -1,4 +1,4 @@
-import React from 'react'
+
 import footer_logo from './Assets/logo_big.png'
 import insta_icon from './Assets/instagram_icon.png'
 import pinterest_icon from './Assets/pintester_icon.png'
