@@ -51,7 +51,7 @@ const Navbar = () => {
       </ul>
       <div className='login-cart hidden md:flex items-center space-x-10'>
         <Link to='/login'>
-        <button type="button" className="text-gray-950 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-950 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Login</button>
+        <button type="button" className="text-gray-950 px-4 py-2 rounded-full border-solid border-2 border-gray-700 hover:bg-gray-200 ">Login</button>
         </Link>
         <Link to='/cart' className='relative'>
           <img src={cart_icon} alt="Cart" className='h-6 w-6' />

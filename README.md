@@ -16,4 +16,3 @@ QuickCart is a modern e-commerce application built with React and Tailwind CSS. 
 - Tailwind CSS
 - Context API
 
-
