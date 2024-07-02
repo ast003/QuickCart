@@ -1,6 +1,6 @@
 import logo from './Assets/logo.png';
 import cart_icon from './Assets/cart_icon.png';
-import  { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -23,10 +23,11 @@ const Navbar = () => {
             )}
           </svg>
         </button>
-        <Link to='/cart' className='relative ml-4'>
+        <Link to='/cart' className='relative ml-4 -mr-3'>
           <img src={cart_icon} alt="Cart" className='h-6 w-6' />
-          <div className='bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2 text-xs'>1</div>
+          <div className='bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-3 text-xs'>1</div>
         </Link>
+
       </div>
       <ul className={` ${isMenuOpen ? 'flex' : 'hidden'} flex-col md:flex-row md:flex md:space-x-8 md:items-center absolute md:static top-14 left-0 right-0 bg-white md:bg-transparent shadow-md md:shadow-none p-4 md:p-0`}>
         <li onClick={() => { setMenu("shop"); setIsMenuOpen(false); }} className="relative mt-2 md:mt-0">
@@ -51,7 +52,7 @@ const Navbar = () => {
       </ul>
       <div className='login-cart hidden md:flex items-center space-x-10'>
         <Link to='/login'>
-        <button type="button" className="text-gray-950 px-4 py-2 rounded-full border-solid border-2 border-gray-700 hover:bg-gray-200 ">Login</button>
+          <button type="button" className="text-gray-950 px-4 py-2 rounded-full border-solid border-2 border-gray-700 hover:bg-gray-200 ">Login</button>
         </Link>
         <Link to='/cart' className='relative'>
           <img src={cart_icon} alt="Cart" className='h-6 w-6' />

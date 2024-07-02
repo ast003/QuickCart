@@ -38,7 +38,7 @@ const ProductDisplay = (props) => {
         </div>
         <div className="mb-4">
           <h2 className="text-xl text-gray-500 font-semibold mb-2">Select Size</h2>
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 mt-8">
             <div className="border border-gray-300 px-4 py-2 cursor-pointer hover:bg-gray-200">S</div>
             <div className="border border-gray-300 px-4 py-2 cursor-pointer hover:bg-gray-200">M</div>
             <div className="border border-gray-300 px-4 py-2 cursor-pointer hover:bg-gray-200">L</div>
@@ -46,8 +46,8 @@ const ProductDisplay = (props) => {
             <div className="border border-gray-300 px-4 py-2 cursor-pointer hover:bg-gray-200">XXL</div>
           </div>
         </div>
-        <button className="bg-red-500 text-white px-6 py-3 hover:bg-red-600">ADD TO CART</button>
-        <p className="mt-4"><span className="font-semibold">Category:</span> Men, Jacket</p>
+        <button className="bg-red-500 text-white px-6 py-3 hover:bg-red-600 mt-4">ADD TO CART</button>
+        <p className="mt-12"><span className="font-semibold">Category:</span> Men, Jacket</p>
         <p><span className="font-semibold">Tags:</span> Modern, Latest</p>
       </div>
     </div>
