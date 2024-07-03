@@ -2,14 +2,16 @@ import { useContext } from 'react';
 import { ShopContext } from '../Context/ShopContext';
 import dropdown_icon from '../Components/Assets/dropdown_icon.png';
 import Item from '../Components/Item';
+
 const ShopCategory = (props) => {
   const { all_product } = useContext(ShopContext);
+
   return (
     <div>
-      <img className='px-36 mt-6 mb-6' src={props.banner} alt="Banner" />
+      <img className='w-full mt-6 mb-6' src={props.banner} alt="Banner" />
       
-      <div className='shopCategory-indexSort flex justify-between items-center px-36'>
-        <p>
+      <div className='shopCategory-indexSort flex flex-col md:flex-row justify-between items-center px-4 md:px-36'>
+        <p className='mb-4 md:mb-0'>
           <span className='font-semibold'>Showing 1-12</span> out of 36 products
         </p>
         <div className='shopCategory-sort flex items-center'>
@@ -20,7 +22,7 @@ const ShopCategory = (props) => {
         </div>
       </div>
 
-      <div className='shopCategory-products grid grid-cols-4 gap-4 justify-items-center px-36 mt-12'>
+      <div className='shopCategory-products grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center px-4 md:px-36 mt-12'>
         {all_product.map((item, i) => (
           props.category === item.category ? (
             <Item key={i}
@@ -34,7 +36,7 @@ const ShopCategory = (props) => {
       </div>
 
       <div className='flex justify-center mb-12'>
-        <button className='loadmore bg-gray-200  text-gray-900 px-6 py-3 rounded-full mt-24'>
+        <button className='loadmore bg-gray-200 text-gray-900 px-6 py-3 rounded-full mt-24'>
           Explore More
         </button>
       </div>

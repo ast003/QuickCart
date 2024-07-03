@@ -7,7 +7,7 @@ const NewCollections = () => {
     <div className='new-collections'>
       <h1 className='text-4xl font-semibold flex justify-center mb-4'>NEW COLLECTIONS</h1>
       <hr className='border-t-4 border-black w-1/6 mx-auto mb-12' />
-      <div className='grid grid-cols-4 gap-2 justify-items-center px-40'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center px-40'>
         {new_collections.map((item, i) => (
           <Item
             key={i}
