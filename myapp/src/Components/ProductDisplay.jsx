@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import star_icon from './Assets/star_icon.png';
 import star_dull_icon from './Assets/star_dull_icon.png';
+import { ShopContext } from '../Context/ShopContext';
 
 const ProductDisplay = (props) => {
   const { product } = props;
+  const {addToCart}=useContext(ShopContext);
   return (
     <div className="flex flex-wrap">
       <div className="w-full md:w-1/2 p-4">
@@ -46,12 +48,11 @@ const ProductDisplay = (props) => {
             <div className="border border-gray-300 px-4 py-2 cursor-pointer hover:bg-gray-200">XXL</div>
           </div>
         </div>
-        <button className="bg-red-500 text-white px-6 py-3 hover:bg-red-600 mt-4">ADD TO CART</button>
+        <button onClick={()=>{addToCart(product.id)}}className="bg-red-500 text-white px-6 py-3 hover:bg-red-600 mt-4">ADD TO CART</button>
         <p className="mt-12"><span className="font-semibold">Category:</span> Men, Jacket</p>
         <p><span className="font-semibold">Tags:</span> Modern, Latest</p>
       </div>
     </div>
   );
 }
-
 export default ProductDisplay;

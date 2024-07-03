@@ -1,17 +1,19 @@
 import logo from './Assets/logo.png';
 import cart_icon from './Assets/cart_icon.png';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ShopContext } from '../Context/ShopContext';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const {getTotalItems}=useContext(ShopContext);
 
   return (
     <div className='navbar bg-white shadow-lg p-4 flex items-center justify-between'>
-      <div className='nav-logo flex items-center'>
+      <div className='nav-logo flex items-center ml-16'>
         <img src={logo} alt="Logo" className='h-8 w-8' />
-        <p className='ml-2 text-3xl font-semibold'>QuickCart</p>
+        <p className='text-3xl font-semibold '>QuickCart</p>
       </div>
       <div className='md:hidden flex items-center'>
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='text-gray-700 focus:outline-none'>
@@ -50,13 +52,13 @@ const Navbar = () => {
           <Link to='/login' className='bg-blue-500 text-white px-4 py-2 rounded w-full text-center'>Login</Link>
         </li>
       </ul>
-      <div className='login-cart hidden md:flex items-center space-x-10'>
+      <div className='login-cart hidden md:flex items-center space-x-8'>
         <Link to='/login'>
           <button type="button" className="text-gray-950 px-4 py-2 rounded-full border-solid border-2 border-gray-700 hover:bg-gray-200 ">Login</button>
         </Link>
         <Link to='/cart' className='relative'>
-          <img src={cart_icon} alt="Cart" className='h-6 w-6' />
-          <div className='bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2 text-xs'>1</div>
+          <img src={cart_icon} alt="Cart" className='h-8 w-8' />
+          <div className='bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2 text-xs'>{getTotalItems()}</div>
         </Link>
       </div>
     </div>
