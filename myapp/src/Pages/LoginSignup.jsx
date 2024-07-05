@@ -29,7 +29,7 @@ const PasswordSignUp = () => {
 
       const user = userCredential.user;
       console.log('User signed up:', user);
-      navigate('/');
+      navigate('/shop');
     } catch (err) {
       const errorMessage = err.message;
       const errorCode = err.code;
@@ -61,7 +61,7 @@ const PasswordSignUp = () => {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       console.log('User signed in with Google:', user);
-      navigate('');
+      navigate('/shop');
     } catch (err) {
       const errorMessage = err.message;
       console.error('Google sign-in error:', errorMessage);
@@ -100,7 +100,7 @@ const PasswordSignUp = () => {
           Sign Up with Google
         </button>
         <p className="text-center mt-4">
-          Already have an account? <Link to="/signin" className="text-blue-500 cursor-pointer hover:underline">Sign In</Link>
+          Already have an account? <Link to="/" className="text-blue-500 cursor-pointer hover:underline">Sign In</Link>
         </p>
       </div>
     </div>
