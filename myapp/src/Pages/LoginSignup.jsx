@@ -29,7 +29,7 @@ const PasswordSignUp = () => {
 
       const user = userCredential.user;
       console.log('User signed up:', user);
-      navigate('./Shop.jsx');
+      navigate('/');
     } catch (err) {
       const errorMessage = err.message;
       const errorCode = err.code;
