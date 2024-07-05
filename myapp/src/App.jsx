@@ -1,5 +1,5 @@
 import './App.css'
-import {Route,Routes,BrowserRouter} from 'react-router-dom';
+import { Route, Routes, BrowserRouter,useLocation } from 'react-router-dom';
 import Navbar from './Components/Navbar'
 import Shop from './Pages/Shop'
 import ShopCategory from './Pages/ShopCategory'
@@ -12,26 +12,35 @@ import women_banner from './Components/Assets/banner_women.png'
 import kids_banner from './Components/Assets/banner_kids.png'
 import SignIn from './Pages/Signin'
 function App() {
-  return (
-    <div >
-      <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route path='/' element={<Shop/>}/>
-        <Route path='/men' element={<ShopCategory banner={men_banner} category="men"/>}/>
-        <Route path='/women' element={<ShopCategory banner={women_banner} category="women"/>}/>
-        <Route path='/kids' element={<ShopCategory banner={kids_banner} category="kid"/>}/>
-        <Route path='/product' element={<Product/>}>
-        <Route path=':productId' element={<Product/>}/>
-        </Route>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='/login' element={<LoginSignup/>}/>
-        <Route path='/signin' element={<SignIn/>}/>
-        </Routes>
-        <Footer/>
-      </BrowserRouter>   
-  </div>
-  )
+  return(<div>
+  <BrowserRouter>
+    <Layout />
+  </BrowserRouter>
+</div>
+);
 }
+
+const Layout = () => {
+const location = useLocation();
+
+return (
+<>
+  {location.pathname !== '/login' && location.pathname !== '/' && <Navbar />}
+  <Routes>
+    <Route path='/login' element={<LoginSignup />} />
+    <Route path='/' element={<SignIn />} />
+    <Route path='/shop' element={<Shop />} />
+    <Route path='/men' element={<ShopCategory banner={men_banner} category="men" />} />
+    <Route path='/women' element={<ShopCategory banner={women_banner} category="women" />} />
+    <Route path='/kids' element={<ShopCategory banner={kids_banner} category="kid" />} />
+    <Route path='/product' element={<Product />}>
+      <Route path=':productId' element={<Product />} />
+    </Route>
+    <Route path='/cart' element={<Cart />} />
+  </Routes>
+  <Footer />
+</>
+);
+};
 
 export default App;
