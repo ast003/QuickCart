@@ -29,7 +29,7 @@ const SignIn = () => {
 
       const user = userCredential.user;
       console.log('User signed in:', user);
-      navigate('./Shop.jsx');
+      navigate('/shop');
     } catch (err) {
       const errorMessage = err.message;
       const errorCode = err.code;
@@ -58,7 +58,7 @@ const SignIn = () => {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       console.log('User signed in with Google:', user);
-      navigate('./Shop.jsx');
+      navigate('/shop');
     } catch (err) {
       const errorMessage = err.message;
       console.error('Google sign-in error:', errorMessage);
