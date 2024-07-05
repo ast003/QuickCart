@@ -8,7 +8,7 @@ const ShopCategory = (props) => {
 
   return (
     <div>
-      <img className='w-full mt-6 mb-6' src={props.banner} alt="Banner" />
+      <img className='w-full px-28 mt-6 mb-6' src={props.banner} alt="Banner" />
       
       <div className='shopCategory-indexSort flex flex-col md:flex-row justify-between items-center px-4 md:px-36'>
         <p className='mb-4 md:mb-0'>

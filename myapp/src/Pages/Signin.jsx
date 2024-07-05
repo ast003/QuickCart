@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import { auth, provider } from './firebase';
 
-const PasswordSignUp = () => {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -21,14 +21,14 @@ const PasswordSignUp = () => {
     e.preventDefault();
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(
+      const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
         password
       );
 
       const user = userCredential.user;
-      console.log('User signed up:', user);
+      console.log('User signed in:', user);
       navigate('./Shop.jsx');
     } catch (err) {
       const errorMessage = err.message;
@@ -37,17 +37,14 @@ const PasswordSignUp = () => {
       setError(true);
 
       switch (errorCode) {
-        case "auth/weak-password":
-          setErrorMessage("The password is too weak.");
+        case "auth/wrong-password":
+          setErrorMessage("Incorrect password.");
           break;
-        case "auth/email-already-in-use":
-          setErrorMessage("This email address is already in use by another account.");
+        case "auth/user-not-found":
+          setErrorMessage("No account found with this email.");
           break;
         case "auth/invalid-email":
           setErrorMessage("This email address is invalid.");
-          break;
-        case "auth/operation-not-allowed":
-          setErrorMessage("Email/password accounts are not enabled.");
           break;
         default:
           setErrorMessage(errorMessage);
@@ -61,7 +58,7 @@ const PasswordSignUp = () => {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       console.log('User signed in with Google:', user);
-      navigate('');
+      navigate('./Shop.jsx');
     } catch (err) {
       const errorMessage = err.message;
       console.error('Google sign-in error:', errorMessage);
@@ -73,7 +70,7 @@ const PasswordSignUp = () => {
   return (
     <div className="bg-gradient-to-b from-pink-100 min-h-screen flex flex-col items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-96 h-auto">
-        <h1 className="text-3xl font-semibold mb-6">Sign Up</h1>
+        <h1 className="text-3xl font-semibold mb-6">Sign In</h1>
         <form className="mb-4" onSubmit={handleSubmit}>
           <input
             type="email"
@@ -92,19 +89,20 @@ const PasswordSignUp = () => {
             value={password}
           />
           <button type="submit" className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 transition duration-200">
-            Sign Up
+            Sign In
           </button>
           {error && <p className="mt-4 text-red-500">{errorMessage}</p>}
         </form>
         <button onClick={handleGoogleSignIn} className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200">
-          Sign Up with Google
+          Sign In with Google
         </button>
         <p className="text-center mt-4">
-          Already have an account? <Link to="/signin" className="text-blue-500 cursor-pointer hover:underline">Sign In</Link>
+          Don't have an account? <Link to="/login" className="text-blue-500 cursor-pointer hover:underline">Sign Up</Link>
         </p>
       </div>
     </div>
   );
 };
 
-export default PasswordSignUp;
+export default SignIn;
+
