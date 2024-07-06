@@ -70,7 +70,7 @@ const SignIn = () => {
   return (
     <div className="bg-gradient-to-b from-pink-100 min-h-screen flex flex-col items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-96 h-auto">
-        <h1 className="text-3xl font-semibold mb-6">Sign In</h1>
+        <h1 className="text-3xl font-semibold mb-6 p">Sign In</h1>
         <form className="mb-4" onSubmit={handleSubmit}>
           <input
             type="email"
@@ -97,7 +97,7 @@ const SignIn = () => {
           Sign In with Google
         </button>
         <p className="text-center mt-4">
-          Don't have an account? <Link to="/login" className="text-blue-500 cursor-pointer hover:underline">Sign Up</Link>
+          Don't have an account? <Link to="/" className="text-blue-500 cursor-pointer hover:underline">Sign Up</Link>
         </p>
       </div>
     </div>

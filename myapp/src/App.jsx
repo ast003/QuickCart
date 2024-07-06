@@ -25,10 +25,10 @@ const location = useLocation();
 
 return (
 <>
-  {location.pathname !== '/login' && location.pathname !== '/' && <Navbar />}
+  {location.pathname !== '/signin' && location.pathname !== '/' && <Navbar />}
   <Routes>
-    <Route path='/login' element={<LoginSignup />} />
-    <Route path='/' element={<SignIn />} />
+    <Route path='/' element={<LoginSignup />} />
+    <Route path='/signin' element={<SignIn />} />
     <Route path='/shop' element={<Shop />} />
     <Route path='/men' element={<ShopCategory banner={men_banner} category="men" />} />
     <Route path='/women' element={<ShopCategory banner={women_banner} category="women" />} />
@@ -38,7 +38,7 @@ return (
     </Route>
     <Route path='/cart' element={<Cart />} />
   </Routes>
-  <Footer />
+  {location.pathname !== '/signin' && location.pathname !== '/' && <Footer />}
 </>
 );
 };

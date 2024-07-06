@@ -100,7 +100,7 @@ const PasswordSignUp = () => {
           Sign Up with Google
         </button>
         <p className="text-center mt-4">
-          Already have an account? <Link to="/" className="text-blue-500 cursor-pointer hover:underline">Sign In</Link>
+          Already have an account? <Link to="/signin" className="text-blue-500 cursor-pointer hover:underline">Sign In</Link>
         </p>
       </div>
     </div>
