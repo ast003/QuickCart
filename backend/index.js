@@ -113,6 +113,20 @@ app.get('/allproduct', async (req, res) => {
     res.send(products);
 });
 
+app.get('/newCollection', async (req, res) => {
+    let products = await Product.find({});
+    let newCollections=products.slice(1).slice(-8);
+    console.log("NewCollections fetched");
+    res.send(newCollections);
+});
+app.get('/popularInwoman', async (req, res) => {
+    let products = await Product.find({category:"women"});
+    let popularInwoman=products.slice(0,4);
+    console.log("Popular in Woman fetched");
+    res.send(popularInwoman);
+});
+
+
 // App creation
 app.listen(port, (error) => {
     if (!error) {
