@@ -4,7 +4,7 @@ import dropdown_icon from '../Components/Assets/dropdown_icon.png';
 import Item from '../Components/Item';
 
 const ShopCategory = (props) => {
-  const { all_product } = useContext(ShopContext);
+  const { allProducts } = useContext(ShopContext);
 
   return (
     <div>
@@ -23,7 +23,7 @@ const ShopCategory = (props) => {
       </div>
 
       <div className='shopCategory-products grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center px-4 md:px-36 mt-12'>
-        {all_product.map((item, i) => (
+        {allProducts.map((item, i) => (
           props.category === item.category ? (
             <Item key={i}
               id={item.id}

@@ -6,9 +6,9 @@ import ProductDisplay from '../Components/ProductDisplay';
 import DescriptionBox from '../Components/DescriptionBox';
 import RelatedProducts from '../Components/RelatedProducts';
 const Product = () => {
-  const {all_product}=useContext(ShopContext);
+  const {allProducts}=useContext(ShopContext);
   const {productId}=useParams();
-  const product=all_product.find((e)=>e.id===Number(productId));
+  const product=allProducts.find((e)=>e.id===Number(productId));
   return (
     <div>
       <BreadCrum product={product}/>

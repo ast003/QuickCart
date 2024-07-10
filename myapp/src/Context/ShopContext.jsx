@@ -1,22 +1,31 @@
 import { createContext, useState, useEffect } from 'react';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { auth } from '../Pages/firebase';  
-import all_product from '../Components/Assets/all_product';
 import { db } from '../Pages/firebase'; 
 
 export const ShopContext = createContext(null);
 
-const getDefaultCart = () => {
-    let cart = {};
-    for (let index = 0; index < all_product.length; index++) {
-        cart[all_product[index].id.toString()] = 0;
-    }
-    return cart;
-};
-
 const ShopContextProvider = (props) => {
     const [user, setUser] = useState(null);
     const [cartItems, setCartItems] = useState(null);
+    const [allProducts, setAllProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await fetch('http://localhost:4000/allproduct');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch products');
+                }
+                const products = await response.json();
+                setAllProducts(products);
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
@@ -28,8 +37,9 @@ const ShopContextProvider = (props) => {
                 if (cartSnapshot.exists()) {
                     setCartItems(cartSnapshot.data().cartItems);
                 } else {
-                    setCartItems(getDefaultCart());
-                    await setDoc(cartDocRef, { cartItems: getDefaultCart() });
+                    const defaultCart = getDefaultCart(allProducts);
+                    setCartItems(defaultCart);
+                    await setDoc(cartDocRef, { cartItems: defaultCart });
                 }
             } else {
                 setCartItems(null);
@@ -37,13 +47,21 @@ const ShopContextProvider = (props) => {
         });
 
         return () => unsubscribe();
-    }, []);
+    }, [allProducts]);
 
     useEffect(() => {
         if (user && cartItems !== null) {
             saveCartData(user.uid, cartItems);
         }
     }, [cartItems, user]);
+
+    const getDefaultCart = (products) => {
+        let cart = {};
+        for (let index = 0; index < products.length; index++) {
+            cart[products[index].id.toString()] = 0;
+        }
+        return cart;
+    };
 
     const saveCartData = async (userId, cartItems) => {
         const cartDocRef = doc(db, 'carts', userId);
@@ -69,7 +87,7 @@ const ShopContextProvider = (props) => {
         let totalAmount = 0;
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
-                let itemInfo = all_product.find((product) => product.id.toString() === item);
+                let itemInfo = allProducts.find((product) => product.id.toString() === item);
                 if (itemInfo) {
                     totalAmount += itemInfo.new_price * cartItems[item];
                 }
@@ -94,7 +112,7 @@ const ShopContextProvider = (props) => {
     const contextValue = {
         getTotalItems,
         getTotalAmount,
-        all_product,
+        allProducts,
         cartItems,
         addToCart,
         removeFromCart,

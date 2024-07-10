@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import { auth, provider } from './firebase';
+import logo from '../Components/Assets/logo.png'
 
 const PasswordSignUp = () => {
   const [email, setEmail] = useState("");
@@ -73,7 +74,11 @@ const PasswordSignUp = () => {
   return (
     <div className="bg-gradient-to-b from-pink-100 min-h-screen flex flex-col items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-96 h-auto">
-        <h1 className="text-3xl font-semibold mb-6">Sign Up</h1>
+      <div className="flex">
+        <h1 className="text-4xl font-semibold mb-6 text-center ">QuickCart</h1>
+        <img className='h-8 w-8 ml-4'src={logo}/>
+        </div>
+        <h1 className="text-2xl font-semibold mb-6 flex items-center justify-center">Sign Up</h1>
         <form className="mb-4" onSubmit={handleSubmit}>
           <input
             type="email"

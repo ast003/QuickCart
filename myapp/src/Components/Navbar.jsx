@@ -60,7 +60,7 @@ const Navbar = () => {
           {menu === "kids" && <hr className="absolute bottom-0 left-0 w-full border-b-2 border-red-500" />}
         </li>
         <li className='flex md:hidden mt-4'>
-          <Link to='/login' className='bg-blue-500 text-white px-4 py-2 rounded w-full text-center'>Login</Link>
+          <Link to='/login' className='bg-blue-500 text-white px-4 py-2 rounded w-full text-center'>Logout</Link>
         </li>
       </ul>
       <div className='hidden md:flex items-center space-x-8'>
