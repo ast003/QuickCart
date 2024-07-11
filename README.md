@@ -36,4 +36,7 @@ QuickStart is a web application designed for e-commerce. It offers robust featur
 - Git installed
 - Firebase project set up
 
+## ScreenShots
+![image](https://github.com/ast003/QuickCart/assets/138204088/731ce443-6442-4384-83cb-3076b942a54a)
+
 
