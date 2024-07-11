@@ -36,6 +36,29 @@ QuickStart is a web application designed for e-commerce. It offers robust featur
 - Git installed
 - Firebase project set up
 
+### Steps
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/ast003/QuickCart.git
+   cd myapp
+2. **Install Dependencies**                                                
+npm install
+                                                                                                                                         
+3.  **Set Up Firebase**
+
+Go to the Firebase Console and create a new project (or use an existing one).
+Enable Email/Password and Google sign-in methods in the Firebase Authentication section.
+Create a Firestore database in test mode.
+Generate Firebase configuration by going to Project Settings > General > Your apps > Firebase SDK snippet. Copy the configuration object.
+
+  
+
+### Prerequisites
+- Node.js and npm installed
+- Git installed
+- Firebase project set up
+
 ## ScreenShots
 ![Screenshot 2024-07-12 002852](https://github.com/ast003/QuickCart/assets/138204088/744c4846-13fa-41db-8b62-c5e4d2a13011)
 ![Screenshot 2024-07-12 002928](https://github.com/ast003/QuickCart/assets/138204088/2437459d-df6f-4fd3-b725-10ebfaf45f8c)
