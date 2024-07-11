@@ -1,15 +1,5 @@
 # QuickStart Web App
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Introduction
 QuickStart is a web application designed for e-commerce. It offers robust features like user authentication, cart functionality for authenticated users, and an admin panel to manage products. Users can sign up and log in using either a password or their Google account.
 
@@ -32,6 +22,8 @@ QuickStart is a web application designed for e-commerce. It offers robust featur
   - Tailwind CSS
 - **Backend**
   - Firebase Authentication
+  - Express
+  - MongoDB
   - Firebase Firestore
 - **Other Tools**
   - Git
@@ -44,8 +36,4 @@ QuickStart is a web application designed for e-commerce. It offers robust featur
 - Git installed
 - Firebase project set up
 
-### Steps
-1. **Clone the repository**
-   ```sh
-   git clone https://github.com/ast003/QuickStart.git
-   cd QuickStart
+
